@@ -69,6 +69,14 @@ Enter the ngrok URL into the **Payload URL** field and append the path `/api/git
 
 Your function should now be triggered whenever there is a new repository.
 
+### Linting
+
+You can lint the code with the following command. Note that this will also run `shellcheck` against any `.sh` script in the `util` folder.
+
+```sh
+$ npm run lint
+```
+
 ### Adjust the branch protection config
 
 Currently the applied branch protection is static and can't be changed via settings but rather by changing the code. This is something to be added sooner in case it's needed or to make this function more flexible.

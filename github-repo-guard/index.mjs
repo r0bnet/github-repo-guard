@@ -35,7 +35,7 @@ export default async function (context, req) {
       context.res = {
         status: 200,
         body: 'Repository is private, skipping'
-      }
+      };
       return;
     }
 
@@ -43,7 +43,7 @@ export default async function (context, req) {
       owner: repository.owner.login,
       repo: repository.name,
       branch: repository.default_branch
-    }
+    };
 
     const branchProtectionOptions = buildBranchProtectionOptions();
     await retry(async () => {
@@ -105,8 +105,8 @@ function getSignature(req) {
 
 function verifySignature(body, githubWebhookSecret, signature) {
   const expectedHash = crypto.createHmac('sha256', githubWebhookSecret)
-                             .update(JSON.stringify(body))
-                             .digest("hex");
+    .update(JSON.stringify(body))
+    .digest('hex');
 
   return signature === expectedHash;
 }
