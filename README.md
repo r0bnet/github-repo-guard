@@ -20,6 +20,10 @@ The following options can or must be set in order to control how the repo guard 
 | CLOSE_ISSUE_AFTER_CREATION | Decides wether the issue is being closed after its creation | ❌ | `true` |
 | ENABLE_PROTECTION_FOR_PRIVATE_REPOS | If set to `true` branch protection will be enabled even if the repo is private | ❌ | `false` |
 
+> **Note**
+> 
+> If you use the a personal access token from a user that you also want to mention then the user won't get notified by default. In order to turn this feature on then you can do that by enabling `Include your own updates` in GitHub under **Settings -> Notifications -> Email notification preferences** for the specific account.
+
 Development
 -----------
 
